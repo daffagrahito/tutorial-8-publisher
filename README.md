@@ -10,5 +10,10 @@ URL `amqp://guest:guest@localhost:5672` diperlukan agar terhubung ke broker AMQP
 
 Publisher dan subscriber harus connect ke broker yang sama untuk menerima dan mengirim *messages*, makanya mereka menggunakan connection string yang sama.
 
-## Running RabbitMQ:
+## Running RabbitMQ as message broker:
 ![Running RabbitMQ the first time](assets/images/RunningRabbitMQ.png)
+
+## Sending and processing event:
+![Sending Message Broker](assets/images/SendingMessageBroker.png)
+
+Pada saat RabbitMQ berjalan dan kita menjalankan `cargo run` di publisher dan Subscriber, maka Publisher akan mengirimkan data berupa 5 event ke message broker yang diterima oleh Subscriber.
