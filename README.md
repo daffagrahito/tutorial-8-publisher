@@ -22,3 +22,8 @@ Pada saat RabbitMQ berjalan dan kita menjalankan `cargo run` di publisher dan Su
 ![Monitoring Chart based on Publisher](assets/images/MonitoringChart.png)
 
 Apabila dijalankan `cargo run` berkali-kali selama satu detik lalu juga dalam satu detik hanya `cargo run` sekali, terlihat bahwa message ratesnya berbeda. Ini menunjukan kalau message rates meningkat saat message broker menerima data dari Publisher dan secepat apa message ratesnya disebabkan sebanyak apa message broker menerima data dari Publisher dalam satu detik.
+
+## Simulation slow subscriber:
+![Simulation Slow Subscriber](assets/images/SimulationSlowSubscriber.png)
+
+Dari gambar tersebut terlihat bahwa Subscriber menjadi lambat dalam menerima data dari message broker yaitu dengan delay satu detik dalam setiap process. Queued messages pada message broker disini akan bertambah terus selagi bertambah juga delay karena Publisher dalam kasus ini akan lebih cepat daripada Subscriber sebagai penerima. Total banyak queue pada komputer saya disini adalah 20 dalam menjalakan 5 kali `cargo run` di Publisher.
