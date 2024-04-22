@@ -27,3 +27,10 @@ Apabila dijalankan `cargo run` berkali-kali selama satu detik lalu juga dalam sa
 ![Simulation Slow Subscriber](assets/images/SimulationSlowSubscriber.png)
 
 Dari gambar tersebut terlihat bahwa Subscriber menjadi lambat dalam menerima data dari message broker yaitu dengan delay satu detik dalam setiap process. Queued messages pada message broker disini akan bertambah terus selagi bertambah juga delay karena Publisher dalam kasus ini akan lebih cepat daripada Subscriber sebagai penerima. Total banyak queue pada komputer saya disini adalah 20 dalam menjalakan 5 kali `cargo run` di Publisher.
+
+## Reflection and Running at least three subscribers
+![Consoles for Subscriber and a Publisher](assets/images/FourConsoles.png)
+
+![RabbitMQ Three Subscribers](assets/images/ThreeSubsRabbitMQ.png)
+
+Dari yang saya pahami, Jika terdapat banyak subscriber yang connect ke satu publisher maka pengiriman data ke message brokernya akan menjadi lebih cepat dan terdistribusi pada console yang connect juga tidak ada yang masuk ke dalam queued messages pada message broker. Jumlah subscribers yang terhubung dapat mempengaruhi kinerja, tetapi kecepatan pengiriman ke message broker juga dipengaruhi oleh faktor lain seperti network latency dan beban kerja message broker.
