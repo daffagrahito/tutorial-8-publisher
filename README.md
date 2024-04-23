@@ -1,3 +1,7 @@
+# Module 8 Publisher
+
+#### Muhammad Daffa Grahito Triharsanto - 2206820075 - Pemrograman Lanjut B
+
 ### How many data your publisher program will send to the message broker in one run? 
 Publisher programnya akan mengirimkan 5 messages ke message broker dalam satu run, karena tiap kali pemanggilan `p.publish_event` akan dikirimkan satu message dan ada 5 pemanggilan di dalam main methodnya.
 
